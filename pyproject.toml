@@ -1,0 +1,14 @@
+[project]
+name = "testagent"
+version = "0.1.0"
+description = "Local RAG AI Agent for Test Mapping"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "chromadb>=1.5.7",
+    "langchain>=1.2.15",
+    "langchain-ollama>=1.1.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "langchain-chroma>=1.1.0",
+]

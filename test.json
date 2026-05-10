@@ -1,0 +1,58 @@
+[
+  {
+    "id": "TC-AUTH-001",
+    "title": "Successful login with valid credentials",
+    "description": "Verify that a registered backend user can successfully authenticate and receive a JWT token using valid credentials.",
+    "tags": ["@auth", "@smoke", "@regression", "@user-management"],
+    "service": "user-auth-service"
+  },
+  {
+    "id": "TC-AUTH-002",
+    "title": "Failed login with invalid password",
+    "description": "Verify that authentication fails and returns a HTTP 401 Unauthorized status when the password does not match the username.",
+    "tags": ["@auth", "@error-handling", "@security"],
+    "service": "user-auth-service"
+  },
+  {
+    "id": "TC-PAY-001",
+    "title": "Successful payment execution",
+    "description": "Verify that a user can successfully execute a payment transaction using a linked bank account when sufficient balance is present.",
+    "tags": ["@payment", "@smoke", "@integration", "@transactions"],
+    "service": "payment-service"
+  },
+  {
+    "id": "TC-PAY-002",
+    "title": "Payment rejected due to insufficient balance",
+    "description": "Verify that the payment gateway rejects the transaction and throws an InsufficientBalanceException when processing an amount greater than the account balance.",
+    "tags": ["@payment", "@error-handling", "@edge-case"],
+    "service": "payment-service"
+  },
+  {
+    "id": "TC-ORD-001",
+    "title": "Create a new buy order",
+    "description": "Verify that a customer can successfully place a new mutual fund purchase order and the system updates the order status to PENDING.",
+    "tags": ["@orders", "@portfolio", "@regression", "@database"],
+    "service": "order-management-service"
+  },
+  {
+    "id": "TC-ORD-002",
+    "title": "Cancel a pending order before market cut-off",
+    "description": "Verify that an active pending order can be successfully cancelled by the user prior to the daily transaction cut-off window.",
+    "tags": ["@orders", "@portfolio", "@cancel-flow"],
+    "service": "order-management-service"
+  },
+  {
+    "id": "TC-NOTIF-001",
+    "title": "Send SMS notification on successful transaction",
+    "description": "Verify that an asynchronous SMS message notification is dispatched to the user's registered phone number immediately after a transaction completes.",
+    "tags": ["@notifications", "@async", "@messaging"],
+    "service": "notification-service"
+  },
+   {
+    "id": "TC-WOE-001",
+    "title": "WOE is the main application or service from where the buy sell and exchange of mutual funds happens",
+    "description": "Verify that the WOE application correctly handles buy, sell, and exchange operations for mutual funds, ensuring accurate processing and updates to user portfolios.",
+    "tags": ["@WOE", "@BUY", "@SELL","@SELL_ALL", "@EXCHANGE", "@EXCHNAGE_ALL"],
+    "service": "WOE-service"
+  }
+]
